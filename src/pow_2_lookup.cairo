@@ -1,4 +1,4 @@
-// Better.
+// Better. Constant cost 1 RC + 11 steps.
 fn pow_2_match(i: u32) -> u128 {
     match i {
         0 => 1,
@@ -18,10 +18,10 @@ fn pow_2_match(i: u32) -> u128 {
         14 => 16384,
         15 => 32768,
         16 => 65536,
-        _ => 0,
+        _ => 0, // If you put a panic!() here instead of a value, it will have a bigger fixed cost.
     }
 }
-// Worse.
+// Worse. Cost depends on the value of i.
 fn pow_2_if(i: u32) -> u128 {
     if i == 0 {
         return 1;
