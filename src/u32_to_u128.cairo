@@ -8,7 +8,9 @@ fn main_1(d0: u32, d1: u32, d2: u32, d3: u32) -> u128 {
     return z;
 }
 
-// Convert 4 u32 to u128
+// Convert 4 u32 to u128 using felt252 as intermediate type.
+// This is much cheaper, but only when proving with Stone.
+// Whith stwo, the first version will be better.
 fn main_2(d0: u32, d1: u32, d2: u32, d3: u32) -> u128 {
     let z_252: felt252 = d0.into()
         + d1.into() * POW_2_32.into()
