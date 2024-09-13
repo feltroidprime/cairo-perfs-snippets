@@ -1,4 +1,5 @@
-fn main_0(array: Array<felt252>) -> felt252 {
+// Those two are strictly equivalent in cost and the best way to iterate over an array.
+fn for_loop(array: Array<felt252>) -> felt252 {
     let mut sum: felt252 = 0;
     for i in array {
         sum += i + 1;
@@ -6,7 +7,7 @@ fn main_0(array: Array<felt252>) -> felt252 {
     return sum;
 }
 
-fn main_1(mut array: Array<felt252>) -> felt252 {
+fn while_let(mut array: Array<felt252>) -> felt252 {
     let mut sum: felt252 = 0;
     while let Option::Some(i) = array.pop_front() {
         sum += i + 1;
@@ -17,13 +18,13 @@ fn main_1(mut array: Array<felt252>) -> felt252 {
 
 #[cfg(test)]
 mod tests {
-    use super::{main_0, main_1};
+    use super::{for_loop, while_let};
     #[test]
-    fn test_main_0() {
-        let _ = main_0(array![1, 2, 3, 4]);
+    fn test_for_loop() {
+        let _ = for_loop(array![1, 2, 3, 4]);
     }
     #[test]
-    fn test_main_1() {
-        let _ = main_1(array![1, 2, 3, 4]);
+    fn test_while_let() {
+        let _ = while_let(array![1, 2, 3, 4]);
     }
 }
