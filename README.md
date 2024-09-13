@@ -1,5 +1,10 @@
 ### Some Cairo snippets to compare performance of different approaches
 
+Usage : 
+```
+scarb test --print-resource-usage
+```
+
 ### Useful links
 
 https://github.com/starkware-libs/cairo/blob/0743470c4a3a72301a7382adc946843f8820f0cb/crates/cairo-lang-runner/src/lib.rs#L136-L152
