@@ -27,4 +27,22 @@ mod tests {
     fn test_while_let() {
         let _ = while_let(array![1, 2, 3, 4]);
     }
+
+
+    #[test]
+    fn test_modulo() {
+        let mut index = 0_u32;
+        while index != 2390_u32 {
+            let _ = index & 1;
+            index += 1;
+        }
+    }
+    #[test]
+    fn test_bitwise() {
+        let mut index = 0_u32;
+        while index < 2390_u32 {
+            let _ = index & 1;
+            index += 1;
+        }
+    }
 }
