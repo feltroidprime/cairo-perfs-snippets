@@ -18,7 +18,7 @@ fn pow_2_match(i: u32) -> u128 {
         14 => 16384,
         15 => 32768,
         16 => 65536,
-        _ => 0, // If you put a panic!() here instead of a value, it will have a bigger fixed cost.
+        _ => 0 // If you put a panic!() here instead of a value, it will have a bigger fixed cost.
     }
 }
 // Worse. Cost depends on the value of i.
@@ -77,9 +77,7 @@ fn pow_2_if(i: u32) -> u128 {
     return 0;
 }
 
-const POW_2_LOOKUP: [
-    u128
-    ; 17] = [
+const POW_2_LOOKUP: [u128; 17] = [
     1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536,
 ];
 

@@ -18,18 +18,18 @@ mod tests {
         a: BigStruct,
         b: Array<felt252>,
         d: BigStruct,
-        e: u256
+        e: u256,
     }
 
     #[inline(never)]
     fn f0() -> Box<BigStruct> {
-        let x = BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, };
+        let x = BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10 };
         let boxed_x = BoxTrait::new(x);
         return boxed_x;
     }
     #[inline(never)]
     fn f0_nobox() -> BigStruct {
-        return BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, };
+        return BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10 };
     }
     #[inline(never)]
     fn f1(x: Box<BigStruct>) -> felt252 {
@@ -93,11 +93,11 @@ mod tests {
     fn g0() -> Box<BigStruct2> {
         let boxed_x = BoxTrait::new(
             BigStruct2 {
-                a: BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, },
+                a: BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10 },
                 b: array![1, 2, 3],
-                d: BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, },
-                e: 11
-            }
+                d: BigStruct { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10 },
+                e: 11,
+            },
         );
         return boxed_x;
     }
