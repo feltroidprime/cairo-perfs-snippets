@@ -87,68 +87,64 @@ fn pow_2_array(i: u32) -> u128 {
 }
 
 
-#[cfg(test)]
-mod tests {
-    use super::{POW_2_LOOKUP, pow_2_array, pow_2_if, pow_2_match};
-    #[test]
-    fn test_pow_2_match_16() {
-        let _ = pow_2_match(16);
-    }
-    #[test]
-    fn test_pow_2_if_16() {
-        let _ = pow_2_if(16);
-    }
+#[test]
+fn test_pow_2_match_16() {
+    let _ = pow_2_match(16);
+}
+#[test]
+fn test_pow_2_if_16() {
+    let _ = pow_2_if(16);
+}
 
-    #[test]
-    fn test_pow_2_match_1() {
-        let _ = pow_2_match(1);
-    }
-    #[test]
-    fn test_pow_2_if_1() {
-        let _ = pow_2_if(1);
-    }
-    #[test]
-    fn test_pow_2_match_2() {
-        let _ = pow_2_match(2);
-    }
-    #[test]
-    fn test_pow_2_if_2() {
-        let _ = pow_2_if(2);
-    }
-    #[test]
-    fn test_pow_2_array_16() {
-        let _ = pow_2_array(16);
-    }
-    #[test]
-    fn test_pow_2_array_1() {
-        let _ = pow_2_array(1);
-    }
-    #[test]
-    fn test_pow_2_array_2() {
-        let _ = pow_2_array(2);
-    }
+#[test]
+fn test_pow_2_match_1() {
+    let _ = pow_2_match(1);
+}
+#[test]
+fn test_pow_2_if_1() {
+    let _ = pow_2_if(1);
+}
+#[test]
+fn test_pow_2_match_2() {
+    let _ = pow_2_match(2);
+}
+#[test]
+fn test_pow_2_if_2() {
+    let _ = pow_2_if(2);
+}
+#[test]
+fn test_pow_2_array_16() {
+    let _ = pow_2_array(16);
+}
+#[test]
+fn test_pow_2_array_1() {
+    let _ = pow_2_array(1);
+}
+#[test]
+fn test_pow_2_array_2() {
+    let _ = pow_2_array(2);
+}
 
-    #[test]
-    fn test_pow_2_match_1_2_3_4() {
-        let _ = pow_2_match(1);
-        let _ = pow_2_match(2);
-        let _ = pow_2_match(3);
-        let _ = pow_2_match(4);
-    }
-    #[test]
-    fn test_pow_2_if_1_2_3_4() {
-        let _ = pow_2_if(1);
-        let _ = pow_2_if(2);
-        let _ = pow_2_if(3);
-        let _ = pow_2_if(4);
-    }
-    #[test]
-    fn test_pow_2_array_1_2_3_4() {
-        let pow_2_lookup = POW_2_LOOKUP.span();
-        let _ = *pow_2_lookup.at(1);
-        let _ = *pow_2_lookup.at(2);
-        let _ = *pow_2_lookup.at(3);
-        let _ = *pow_2_lookup.at(4);
-        // Additional access costs 1 RC + 7 steps, cheaper than 11 steps + 1 RC in pow_2_match.
-    }
+#[test]
+fn test_pow_2_match_1_2_3_4() {
+    let _ = pow_2_match(1);
+    let _ = pow_2_match(2);
+    let _ = pow_2_match(3);
+    let _ = pow_2_match(4);
+}
+#[test]
+fn test_pow_2_if_1_2_3_4() {
+    let _ = pow_2_if(1);
+    let _ = pow_2_if(2);
+    let _ = pow_2_if(3);
+    let _ = pow_2_if(4);
+}
+#[test]
+fn test_pow_2_array_1_2_3_4() {
+    let pow_2_lookup = POW_2_LOOKUP.span();
+    let _ = *pow_2_lookup.at(1);
+    let _ = *pow_2_lookup.at(2);
+    let _ = *pow_2_lookup.at(3);
+    let _ = *pow_2_lookup.at(4);
+    // Additional access costs 1 RC + 7 steps, cheaper than 11 steps + 1 RC in pow_2_match.
 }

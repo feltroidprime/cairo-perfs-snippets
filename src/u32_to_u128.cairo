@@ -19,15 +19,13 @@ fn main_2(d0: u32, d1: u32, d2: u32, d3: u32) -> u128 {
     return z_252.try_into().unwrap();
 }
 
-#[cfg(test)]
-mod tests {
-    use super::{main_1, main_2};
-    #[test]
-    fn test_main_1() {
-        let _ = main_1(1, 2, 3, 4);
-    }
-    #[test]
-    fn test_main_2() {
-        let _ = main_2(1, 2, 3, 4);
-    }
+
+#[test]
+fn test_main_1() {
+    let _ = main_1(1, 2, 3, 4);
 }
+#[test]
+fn test_main_2() {
+    let _ = main_2(1, 2, 3, 4);
+}
+
