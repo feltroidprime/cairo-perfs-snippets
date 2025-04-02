@@ -28,12 +28,12 @@ impl HashSpanU64 of HashSpan<u64> {
 }
 
 #[derive(Drop)]
-struct FF<T>{
+struct FF<T> {
     num: Span<Felt<T>>,
     den: Span<Felt<T>>,
 }
 
-fn do_stuff<T, +HashSpan<T>>(ff: FF<T>, s0:felt252)->felt252{
+fn do_stuff<T, +HashSpan<T>>(ff: FF<T>, s0: felt252) -> felt252 {
     let n0 = ff.update_hash_state(s0);
     return n0;
 }
@@ -45,9 +45,7 @@ impl FFImpl<T, +HashSpan<T>> of FFTrait<T> {
         assert((*self.den).len() <= 10, 'den wrong degree');
     }
 
-    fn update_hash_state(
-        self: @FF<T>, s0: felt252,
-    ) -> felt252 {
+    fn update_hash_state(self: @FF<T>, s0: felt252) -> felt252 {
         let n0 = HashSpan::hash_span(*self.num, s0);
         let d0 = HashSpan::hash_span(*self.den, s0);
         return n0 + d0;

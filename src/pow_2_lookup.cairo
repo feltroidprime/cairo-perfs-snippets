@@ -89,7 +89,7 @@ fn pow_2_array(i: u32) -> u128 {
 
 #[cfg(test)]
 mod tests {
-    use super::{pow_2_match, pow_2_if, pow_2_array, POW_2_LOOKUP};
+    use super::{POW_2_LOOKUP, pow_2_array, pow_2_if, pow_2_match};
     #[test]
     fn test_pow_2_match_16() {
         let _ = pow_2_match(16);

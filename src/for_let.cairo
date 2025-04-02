@@ -5,7 +5,7 @@ mod tests {
         let mut sum: felt252 = 0;
         for i in array {
             sum += i + 1;
-        };
+        }
         return sum;
     }
 
@@ -13,7 +13,7 @@ mod tests {
         let mut sum: felt252 = 0;
         while let Option::Some(i) = array.pop_front() {
             sum += i + 1;
-        };
+        }
         return sum;
     }
 
@@ -24,7 +24,7 @@ mod tests {
         let mut q = q;
         for i in p {
             sum = sum + (*i) * (*q.pop_front().unwrap());
-        };
+        }
         return sum;
     }
     #[inline(never)]
@@ -32,7 +32,7 @@ mod tests {
         let mut sum: felt252 = 0;
         for i in 0..p.len() {
             sum = sum + (*p[i]) * (*q[i]);
-        };
+        }
         return sum;
     }
     #[test]

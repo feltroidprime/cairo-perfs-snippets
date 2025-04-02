@@ -1,11 +1,11 @@
-mod for_let;
-mod pow_2_lookup;
-mod u32_to_u128;
-mod permutations;
-mod i128;
 mod boxes;
-mod mut_structs;
-mod pack;
-mod u384_to_u256;
+mod for_let;
 #[cfg(test)]
 mod generic;
+mod i128;
+mod mut_structs;
+mod pack;
+mod permutations;
+mod pow_2_lookup;
+mod u32_to_u128;
+mod u384_to_u256;

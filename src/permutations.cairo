@@ -1,8 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use core::poseidon::hades_permutation;
-    use core::poseidon::PoseidonTrait;
     use core::hash::HashStateTrait;
+    use core::poseidon::{PoseidonTrait, hades_permutation};
 
 
     #[test]

@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use core::result::ResultTrait;
     use core::internal::bounded_int::upcast;
+    use core::result::ResultTrait;
     pub const MULTIPLIER: i128 = 100_000000_i128;
     pub const MULTIPLIER_FELT: NonZero<felt252> = 100_000000;
     pub const ONE: i128 = MULTIPLIER;
@@ -128,7 +128,7 @@ mod tests {
         let mut sum: i128 = 0;
         for val in vals {
             sum = sum + val;
-        };
+        }
         // println!("sum1: {}", sum);
         assert(sum == -3813, 'sum is not 0');
     }
@@ -144,7 +144,7 @@ mod tests {
             } else {
                 sum = sum + a.into();
             }
-        };
+        }
         let sum: i128 = sum.try_into().unwrap();
         // println!("sum2: {}", sum);
         assert(sum == -3813, 'sum_optimized is not 0');
@@ -156,7 +156,7 @@ mod tests {
         let mut sum: felt252 = 0;
         for val in vals {
             sum = sum + val.into();
-        };
+        }
         let sum: i128 = sum.try_into().unwrap();
         // println!("sum2: {}", sum);
         assert(sum == -3813, 'sum_optimized_2 is not 0');
