@@ -1,5 +1,4 @@
-use core::internal::bounded_int::upcast;
-use core::result::ResultTrait;
+use corelib_imports::bounded_int::bounded_int::upcast;
 pub const MULTIPLIER: i128 = 100_000000_i128;
 pub const MULTIPLIER_FELT: NonZero<felt252> = 100_000000;
 pub const ONE: i128 = MULTIPLIER;
@@ -45,14 +44,16 @@ pub fn abs_128(a: i128) -> u128 {
 
 #[inline(never)]
 fn abs_and_sign(self: i128) -> (u128, bool) {
-    match core::internal::bounded_int::constrain::<i128, 0>(self) {
-        Result::Ok(lt0) => (upcast(core::internal::bounded_int::NegateHelper::negate(lt0)), true),
+    match corelib_imports::bounded_int::bounded_int::constrain::<i128, 0>(self) {
+        Result::Ok(lt0) => (
+            upcast(corelib_imports::bounded_int::bounded_int::NegateHelper::negate(lt0)), true,
+        ),
         Result::Err(ge0) => (upcast(ge0), false),
     }
 }
 #[inline(never)]
 fn sign(self: i128) -> bool {
-    match core::internal::bounded_int::constrain::<i128, 0>(self) {
+    match corelib_imports::bounded_int::bounded_int::constrain::<i128, 0>(self) {
         Result::Ok(_) => true,
         Result::Err(_) => false,
     }
@@ -81,26 +82,8 @@ fn test_abs_2_pos() {
 #[inline(always)]
 fn get_i128_random() -> Array<i128> {
     array![
-        165,
-        623,
-        -960,
-        -215,
-        -932,
-        -641,
-        644,
-        -738,
-        -636,
-        -832,
-        -311,
-        612,
-        904,
-        464,
-        -242,
-        -524,
-        -992,
-        249,
-        -177,
-        -274,
+        165, 623, -960, -215, -932, -641, 644, -738, -636, -832, -311, 612, 904, 464, -242, -524,
+        -992, 249, -177, -274,
     ]
 }
 #[test]

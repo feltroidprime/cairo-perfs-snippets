@@ -1,4 +1,4 @@
-use core::starknet::storage_access::StorePacking;
+use starknet::storage_access::StorePacking;
 const TWO_POW_32: felt252 = 0x100000000; // 2^32
 const TWO_POW_64: felt252 = 0x10000000000000000; // 2^64
 const TWO_POW_64_NZ_128: NonZero<u128> = 0x10000000000000000;

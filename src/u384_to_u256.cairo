@@ -1,10 +1,10 @@
-use core::circuit::conversions::{
+use core::circuit::u384;
+use corelib_imports::bounded_int::bounded_int;
+use corelib_imports::circuit::conversions::{
     AddHelperTo128By64Impl, AddHelperTo128By96Impl, AddHelperTo96By32Impl, DivRemU96By32,
     DivRemU96By64, MulHelper32By96Impl, MulHelper64By32Impl, MulHelper64By64Impl, NZ_POW32_TYPED,
     NZ_POW64_TYPED, POW64_TYPED, POW96_TYPED, upcast,
 };
-use core::circuit::u384;
-use core::internal::bounded_int;
 
 
 #[inline(never)]

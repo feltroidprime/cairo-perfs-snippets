@@ -2,5 +2,30 @@
 version = 1
 
 [[package]]
+name = "corelib_imports"
+version = "0.1.2"
+source = "registry+https://scarbs.xyz/"
+checksum = "sha256:feeb2b7091634356871a9f9e1c9a2e5095a5fdbd2fbab92bc4b47ff2f8744b04"
+
+[[package]]
 name = "init"
 version = "0.1.0"
+dependencies = [
+ "corelib_imports",
+ "snforge_std",
+]
+
+[[package]]
+name = "snforge_scarb_plugin"
+version = "0.54.1"
+source = "registry+https://scarbs.xyz/"
+checksum = "sha256:5c754ba8c262633e60c2cd06710cb96604c8bf20595fe60965013fedd8a55df9"
+
+[[package]]
+name = "snforge_std"
+version = "0.54.1"
+source = "registry+https://scarbs.xyz/"
+checksum = "sha256:e0532e6149ffc580e282d0774404e512a6814d477cd65529b91d5a09ac6e07d6"
+dependencies = [
+ "snforge_scarb_plugin",
+]

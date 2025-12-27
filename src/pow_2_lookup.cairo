@@ -1,4 +1,5 @@
 // Better. Constant cost 1 RC + 11 steps.
+#[inline(never)]
 fn pow_2_match(i: u32) -> u128 {
     match i {
         0 => 1,
@@ -22,6 +23,7 @@ fn pow_2_match(i: u32) -> u128 {
     }
 }
 // Worse. Cost depends on the value of i.
+#[inline(never)]
 fn pow_2_if(i: u32) -> u128 {
     if i == 0 {
         return 1;
@@ -82,6 +84,7 @@ const POW_2_LOOKUP: [u128; 17] = [
 ];
 
 // Best only when passing the span array and accessing index more than 2 times.
+#[inline(never)]
 fn pow_2_array(i: u32) -> u128 {
     return *POW_2_LOOKUP.span()[i];
 }
@@ -98,7 +101,8 @@ fn test_pow_2_if_16() {
 
 #[test]
 fn test_pow_2_match_1() {
-    let _ = pow_2_match(1);
+    let x = pow_2_match(1);
+    assert(x != 0, 'x is not 0');
 }
 #[test]
 fn test_pow_2_if_1() {
@@ -127,10 +131,10 @@ fn test_pow_2_array_2() {
 
 #[test]
 fn test_pow_2_match_1_2_3_4() {
-    let _ = pow_2_match(1);
-    let _ = pow_2_match(2);
-    let _ = pow_2_match(3);
-    let _ = pow_2_match(4);
+    let a = pow_2_match(1);
+    let b = pow_2_match(2);
+    let c = pow_2_match(3);
+    let d = pow_2_match(4);
 }
 #[test]
 fn test_pow_2_if_1_2_3_4() {
